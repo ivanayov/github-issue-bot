@@ -3,10 +3,10 @@ provider:
   gateway: http://ip172-18-0-24-bacml13hh5tg00fr987g-8080.direct.labs.play-with-docker.com
 
 functions:
-  func_github_issues_proc:
+  issuetracker:
     lang: python
-    handler: ./func_github_issues_proc
-    image: docwareiy/func_github_issues_proc
+    handler: ./issuetracker
+    image: docwareiy/issuetracker
     environment:
       positive_threshold: "0.6"
       gatway_hostname: "gateway"
