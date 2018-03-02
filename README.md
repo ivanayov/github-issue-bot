@@ -1,4 +1,4 @@
-# github-issuetracker
+# github-issue-bot
 
 This is a Serverless function that tracks new GitHib issues, processes them with sentiment analysis and applies `positive` and `review` labels.
 
@@ -30,7 +30,7 @@ Update `repo` in `env.yml` with the repository you'd like to use the function fo
 
 Go to your github repo -> Settings/Webhooks and create a new Webhook.
 
-Update **Payload URL** to be your OpenFaaS host and the function extension, e.g. `http://localhost:8080/function/issuetracker`.
+Update **Payload URL** to be your OpenFaaS host and the function extension, e.g. `http://localhost:8080/function/issue-bot`.
 
 Choose `application/json` for a **Content Type**.
 
@@ -44,9 +44,9 @@ Select **Active** and press **Update webhook**.
 Use the CLI to build and deploy the function:
 
 ```
-faas build -f issuetracker.yml & faas push -f issuetracker.yml & faas deploy -f issuetracker.yml
+faas build -f issue.yml & faas push -f issue-bot.yml & faas deploy -f issue-bot.yml
 ```
 
-View the logs by executing `docker service logs -f issuetracker` on the Docker instance.
+View the logs by executing `docker service logs -f issue-bot` on the Docker instance.
 
 You can now test the function by creating new issues in your repo.
