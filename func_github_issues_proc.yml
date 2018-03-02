@@ -1,0 +1,16 @@
+provider:
+  name: faas
+  gateway: http://ip172-18-0-24-bacml13hh5tg00fr987g-8080.direct.labs.play-with-docker.com
+
+functions:
+  func_github_issues_proc:
+    lang: python
+    handler: ./func_github_issues_proc
+    image: docwareiy/func_github_issues_proc
+    environment:
+      positive_threshold: "0.6"
+      gatway_hostname: "gateway"
+      write_debug: true
+    environment_file:
+    - env.yml
+
