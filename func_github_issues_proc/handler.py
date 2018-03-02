@@ -20,7 +20,7 @@ def handle(req):
     res = requests.post('http://' + gateway_hostname + ':8080/function/sentimentanalysis', data=payload["issue"]["title"]+" "+payload["issue"]["body"])
 
     # positive_threshold
-    positive_threshold = float(os.getenv("positive_threshold", "0.6"))
+    positive_threshold = float(os.getenv("positive_threshold", "0.2"))
 
     g = Github(os.getenv("auth_token"))
     repo = g.get_repo(os.getenv("repo"))
