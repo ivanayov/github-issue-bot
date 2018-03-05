@@ -5,7 +5,7 @@ This is a Serverless function that tracks new GitHib issues, processes them with
 
 ## Deploy Sentiment Analysis function
 
-In order to use this filter function, you will need to deploy the Sentiment Analysis function first.
+In order to use this issue-bot function, you will need to deploy the Sentiment Analysis function first.
 This is a python function that provides a rating on sentiment positive/negative (polarity -1.0-1.0) and subjectivity provided to each of the sentences sent in via the TextBlob project.
 
 You can checkout the function from [faas/sample-functions](https://github.com/openfaas/faas/tree/master/sample-functions).
